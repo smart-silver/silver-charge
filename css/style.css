@@ -1,0 +1,27 @@
+@import "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500";
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.container {
+  max-width: 60%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .table {
+    font-size: 0.8rem;
+  }
+
+  #mealLabel {
+    padding-right: 0px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
