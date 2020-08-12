@@ -8,6 +8,10 @@ body {
   max-width: 60%;
 }
 
+#mealLabel {
+  padding-right: 0px;
+}
+
 @media (max-width: 768px) {
   .container {
     max-width: 100%;
@@ -15,10 +19,6 @@ body {
 
   .table {
     font-size: 0.8rem;
-  }
-
-  #mealLabel {
-    padding-right: 0px;
   }
 
   h1 {
