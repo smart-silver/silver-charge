@@ -69,15 +69,15 @@ function calc() {
   for (let i = 0; i < PROPORTION.length; i++) {
     let row = table.rows[i];
     row.cells[1].innerHTML =
-      Math.floor(noneSalary, 1)
+      (Math.floor(noneSalary / 10) * 10)
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
     row.cells[2].innerHTML =
-      Math.floor(Salary * PROPORTION[i], 1)
+      (Math.floor(Salary * PROPORTION[i] / 10) * 10)
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
     row.cells[3].innerHTML =
-      Math.floor(noneSalary + Salary * PROPORTION[i], 1)
+      (Math.floor(noneSalary / 10) * 10 + Math.floor(Salary * PROPORTION[i] / 10) * 10)
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
   }
