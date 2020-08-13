@@ -7,9 +7,12 @@ const CHARGE_TABLE = [
   [21770, 27210, 37410, 47210, 52320, 56310],
 ];
 const PROPORTION = [0.15, 0.09, 0.06];
-let mealCharge = 2500,
-  snackCharge = 500,
-  snack = 2;
+let settings = {
+  mealCharge: 2500,
+  snackCharge: 500,
+  snack: 2
+}
+
 
 const table = document.querySelector("#charge"),
   form = document.querySelector("#inputForm"),
@@ -24,16 +27,33 @@ const table = document.querySelector("#charge"),
   inputSnack = document.querySelector("#inputSnack"),
   snackTime = document.querySelector("#snackTime");
 
-function save(event) {
-  mealCharge = inputMeal.value;
-  snackCharge = inputSnack.value;
-  snack = snackTime.value;
+  function loadSet() {
+    const loadedSettings = localStorage.getItem("settings");
+
+    if (loadedSettings !== null) {
+      const parsedSettings = JSON.parse(loadedSettings);
+      settings.mealCharge = Number(parsedSettings.mealCharge);
+      settings.snackCharge = Number(parsedSettings.snackCharge);
+      settings.snack = Number(parsedSettings.snack);
+    }
+
+  }
+
+function saveSet() {
+  localStorage.setItem("settings", JSON.stringify(settings));
+}
+
+function set(event) {
+  settings.mealCharge = Number(inputMeal.value);
+  settings.snackCharge = Number(inputSnack.value);
+  settings.snack = Number(snackTime.value);
+  saveSet();
 }
 
 function setClick(event) {
-  inputMeal.value = mealCharge;
-  inputSnack.value = snackCharge;
-  snackTime.value = snack;
+  inputMeal.value = Number(settings.mealCharge);
+  inputSnack.value = Number(settings.snackCharge);
+  snackTime.value = Number(settings.snack);
 }
 
 function calc() {
@@ -44,7 +64,7 @@ function calc() {
   if (dinner.checked) meal++;
   const dateValue = Number(date.value);
 
-  const noneSalary = (mealCharge * meal + snackCharge * snack) * dateValue;
+  const noneSalary = (settings.mealCharge * meal + settings.snackCharge * settings.snack) * dateValue;
   const Salary = CHARGE_TABLE[levelValue][timeValue] * dateValue;
 
   for (let i = 0; i < PROPORTION.length; i++) {
@@ -69,10 +89,12 @@ function onSubmit(event) {
   calc();
 }
 
-function init() {}
+function init() {
+  loadSet();
+}
 
 form.addEventListener("submit", onSubmit);
 setButtom.addEventListener("click", setClick);
-saveButtom.addEventListener("click", save);
+saveButtom.addEventListener("click", set);
 
 init();
