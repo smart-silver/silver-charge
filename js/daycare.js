@@ -13,7 +13,6 @@ let settings = {
   snack: 2
 }
 
-
 const table = document.querySelector("#charge"),
   form = document.querySelector("#inputForm"),
   level = document.querySelector("#level"),
@@ -70,15 +69,15 @@ function calc() {
   for (let i = 0; i < PROPORTION.length; i++) {
     let row = table.rows[i];
     row.cells[1].innerHTML =
-      Math.floor(noneSalary)
+      Math.floor(noneSalary, 1)
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
     row.cells[2].innerHTML =
-      Math.floor(Salary * PROPORTION[i])
+      Math.floor(Salary * PROPORTION[i], 1)
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
     row.cells[3].innerHTML =
-      Math.floor(noneSalary + Salary * PROPORTION[i])
+      Math.floor(noneSalary + Salary * PROPORTION[i], 1)
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
   }
