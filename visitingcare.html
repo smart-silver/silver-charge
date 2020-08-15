@@ -1,28 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-175244531-1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "UA-175244531-1");
-    </script>
-
-    <!-- Google Adsense -->
-    <script
-      data-ad-client="ca-pub-5666489387007173"
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-    ></script>
-
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -37,17 +15,11 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/daycare.css" />
+    <link rel="stylesheet" href="css/visitingcare.css" />
 
     <title>노인장기요양보험 본인부담금 계산기</title>
 
     <link rel="shortcut icon" href="favicon.ico" />
-
-    <!-- Naver SEO -->
-    <meta
-      name="naver-site-verification"
-      content="2f568db8665bd061392a61932441e501761a7948"
-    />
   </head>
 
   <body>
@@ -62,7 +34,7 @@
           alt=""
           loading="lazy"
         />
-        주간보호</a
+        방문요양</a
       >
       <button
         class="navbar-toggler"
@@ -77,13 +49,13 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >주간보호 <span class="sr-only">(current)</span></a
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"
+              >주간보호</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="visitingcare.html">방문요양</a>
+            <a class="nav-link active" href="#">방문요양 <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">요양원</a>
@@ -123,49 +95,15 @@
           <div class="input-group col-9">
             <select class="custom-select" id="time" required>
               <option value="" selected>이용 시간을 선택해주세요</option>
-              <option value="0">3시간 미만</option>
-              <option value="1">3시간 이상 6시간 미만</option>
-              <option value="2">6시간 이상 8시간 미만</option>
-              <option value="3">8시간 이상 10시간 미만</option>
-              <option value="4">10시간 이상 12시간 미만</option>
-              <option value="5">12시간 이상</option>
+              <option value="0">30분 이상</option>
+              <option value="1">60분 이상</option>
+              <option value="2">90분 이상</option>
+              <option value="3">120분 이상</option>
+              <option value="4">150분 이상</option>
+              <option value="5">180분 이상</option>
+              <option value="6">210분 이상</option>
+              <option value="7">240분 이상</option>
             </select>
-          </div>
-        </div>
-
-        <div class="form-gorup row mb-3">
-          <label for="meal" class="col-3 text-right">식사</label>
-          <div class="col-8 ml-1">
-            <div class="input-group" id="meal">
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="breakfast"
-                  value="breakfast"
-                />
-                <label class="form-check-label" for="breakfast">아침</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="lunch"
-                  value="lunch"
-                  checked
-                />
-                <label class="form-check-label" for="lunch">점심</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="dinner"
-                  value="dinner"
-                />
-                <label class="form-check-label" for="dinner">저녁</label>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -188,16 +126,6 @@
           <button class="btn btn-outline-primary float-left">
             계산
           </button>
-
-          <button
-            type="button"
-            class="btn btn-outline-secondary float-right"
-            data-toggle="modal"
-            data-target="#detailModal"
-            id="setButton"
-          >
-            설정
-          </button>
         </div>
       </form>
 
@@ -206,51 +134,28 @@
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">급여</th>
-            <th scope="col">비급여</th>
-            <th scope="col">총 부담금</th>
+            <th scope="col">월 한도액</th>
+            <th scope="col">본인 부담금</th>
           </tr>
         </thead>
         <tbody id="charge">
           <tr>
             <th scope="row">일반</th>
             <td>-원</td>
-            <td>-원</td>
             <td class="font-weight-bolder">-원</td>
           </tr>
           <tr>
             <th scope="row">감경, 의료</th>
-            <td>-원</td>
             <td>-원</td>
             <td class="font-weight-bolder">-원</td>
           </tr>
           <tr>
             <th scope="row">감경</th>
             <td>-원</td>
-            <td>-원</td>
             <td class="font-weight-bolder">-원</td>
           </tr>
         </tbody>
       </table>
-
-      <!-- Adsense -->
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-      ></script>
-      <!-- rectangle-1 -->
-      <ins
-        class="adsbygoogle"
-        style="display: block;"
-        data-ad-client="ca-pub-5666489387007173"
-        data-ad-slot="6998974928"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
-      <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
-
     </div>
 
     <!-- footer -->
@@ -294,94 +199,9 @@
       </div>
     </footer>
 
-    <!-- 모달 창 Modal -->
-    <div
-      class="modal fade"
-      id="detailModal"
-      tabindex="-1"
-      aria-labelledby="detailModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="detailModalLabel">설정</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group row">
-                <label for="inputMeal" class="col-sm-4 col-form-label"
-                  >식대(원/1식)</label
-                >
-                <div class="col-sm-5">
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="inputMeal"
-                    value="2500"
-                  />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="inputSnack" class="col-sm-4 col-form-label"
-                  >간식(원/1회)</label
-                >
-                <div class="col-sm-5">
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="inputSnack"
-                    value="500"
-                  />
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="snackTime" class="col-sm-4 col-form-label"
-                  >간식 횟수(회/1일)</label
-                >
-                <div class="col-sm-5">
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="snackTime"
-                    value="2"
-                  />
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              닫기
-            </button>
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-dismiss="modal"
-              id="setSave"
-            >
-              저장
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/daycare.js"></script>
+    <script src="js/visitingcare.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
