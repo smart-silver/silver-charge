@@ -17,6 +17,7 @@ const table = document.querySelector("#charge"),
   form = document.querySelector("#inputForm"),
   level = document.querySelector("#level"),
   time = document.querySelector("#time"),
+  breakfast = document.querySelector("#breakfast"),
   lunch = document.querySelector("#lunch"),
   dinner = document.querySelector("#dinner"),
   date = document.querySelector("#date"),
@@ -59,6 +60,7 @@ function calc() {
   const levelValue = Number(level.value);
   const timeValue = Number(time.value);
   let meal = 0;
+  if (breakfast.checked) meal++;
   if (lunch.checked) meal++;
   if (dinner.checked) meal++;
   const dateValue = Number(date.value);
