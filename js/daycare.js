@@ -7,6 +7,7 @@ const CHARGE_TABLE = [
   [21770, 27210, 37410, 47210, 52320, 56310],
 ];
 const PROPORTION = [0.15, 0.09, 0.06];
+const LIMIT = [1498300, 1331800, 1276300, 1173200, 1007200, 566600];
 let settings = {
   mealCharge: 2500,
   snackCharge: 500,
@@ -14,6 +15,7 @@ let settings = {
 }
 
 const table = document.querySelector("#charge"),
+  limitTable = document.querySelector("#limit"),
   form = document.querySelector("#inputForm"),
   level = document.querySelector("#level"),
   time = document.querySelector("#time"),
@@ -83,6 +85,21 @@ function calc() {
         .toString()
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
   }
+
+  let row = limitTable.rows[0];
+  row.cells[0].innerHTML = `${levelValue + 1}등급`;
+  row.cells[1].innerHTML = 
+  LIMIT[levelValue]
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
+  row.cells[2].innerHTML =
+  (Salary)
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
+  row.cells[3].innerHTML =
+  (LIMIT[levelValue] - (Salary))
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
 }
 
 function onSubmit(event) {

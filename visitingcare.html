@@ -133,28 +133,44 @@
         </div>
       </form>
 
-      <!-- 표 table -->
+      <!-- 계산 표 table -->
       <table class="table mt-4">
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">월 한도액</th>
             <th scope="col">본인 부담금</th>
           </tr>
         </thead>
         <tbody id="charge">
           <tr>
             <th scope="row">일반</th>
-            <td>-원</td>
             <td class="font-weight-bolder">-원</td>
           </tr>
           <tr>
             <th scope="row">감경, 의료</th>
-            <td>-원</td>
             <td class="font-weight-bolder">-원</td>
           </tr>
           <tr>
             <th scope="row">감경</th>
+            <td class="font-weight-bolder">-원</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 한도표 table -->
+      <table class="table mt-4">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">월 한도액</th>
+            <th scope="col">총급여비용</th>
+            <th scope="col">잔여한도</th>
+          </tr>
+        </thead>
+        <tbody id="limit">
+          <tr>
+            <th scope="row">-등급</th>
+            <td>-원</td>
             <td>-원</td>
             <td class="font-weight-bolder">-원</td>
           </tr>
