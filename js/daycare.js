@@ -70,6 +70,7 @@ function calc() {
   const noneSalary = (settings.mealCharge * meal + settings.snackCharge * settings.snack) * dateValue;
   const Salary = CHARGE_TABLE[levelValue][timeValue] * dateValue;
 
+  // 본인부담금
   for (let i = 0; i < PROPORTION.length; i++) {
     let row = table.rows[i];
     row.cells[1].innerHTML =
@@ -86,10 +87,14 @@ function calc() {
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
   }
 
+  // 한도
+  let limitTimes = 1;
+  if (timeValue >= 3 && dateValue >= 20) limitTimes = 1.5;
+  console.log(`${timeValue}, ${dateValue}, ${limitTimes}`);
   let row = limitTable.rows[0];
   row.cells[0].innerHTML = `${levelValue + 1}등급`;
   row.cells[1].innerHTML = 
-  LIMIT[levelValue]
+  (LIMIT[levelValue] * limitTimes)
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
   row.cells[2].innerHTML =
