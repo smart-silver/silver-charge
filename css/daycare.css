@@ -4,12 +4,13 @@ body {
   font-family: "Noto Sans KR", sans-serif;
 }
 
-.container {
-  max-width: 60%;
+th {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
 }
 
-#adfit {
-  width: 350px;
+.container {
+  max-width: 60%;
 }
 
 @media (max-width: 768px) {
