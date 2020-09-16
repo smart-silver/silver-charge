@@ -1,5 +1,6 @@
 # 요양원 주간보호센터 본인 부담금 계산
 
 ### TODO
-- 요양원, 재가
+- `DOMContentLoaded`
+- 요양원
 - 주간보호 Detail
