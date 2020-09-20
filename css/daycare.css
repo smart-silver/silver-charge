@@ -9,6 +9,11 @@ th {
   padding-right: 5px !important;
 }
 
+td {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
+
 .container {
   max-width: 60%;
 }
