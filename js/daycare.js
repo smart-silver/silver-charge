@@ -30,7 +30,7 @@ const table = document.querySelector("#charge"),
     snackTime = document.querySelector("#snackTime");
 
 function loadSet() {
-    const loadedSettings = localStorage.getItem("settings");
+    const loadedSettings = localStorage.getItem("settings_d");
 
     if (loadedSettings !== null) {
         const parsedSettings = JSON.parse(loadedSettings);
@@ -42,7 +42,7 @@ function loadSet() {
 }
 
 function saveSet() {
-    localStorage.setItem("settings", JSON.stringify(settings));
+    localStorage.setItem("settings_d", JSON.stringify(settings));
 }
 
 function set(event) {

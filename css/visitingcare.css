@@ -18,6 +18,10 @@ td {
   max-width: 60%;
 }
 
+.col-3 {
+  max-width: 100px;
+}
+
 @media (max-width: 768px) {
   .container {
     max-width: 100%;
