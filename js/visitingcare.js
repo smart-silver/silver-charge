@@ -1,8 +1,8 @@
+const LIMIT = [1498300, 1331800, 1276300, 1173200, 1007200, 566600];
 const CHARGE_TABLE = [
   [14530, 22310, 29920, 37780, 42930, 47460, 51630, 55390]
 ];
 const PROPORTION = [0.15, 0.09, 0.06];
-const LIMIT = [1498300, 1331800, 1276300, 1173200, 1007200, 566600];
 
 const chargeTable = document.querySelector("#charge"),
   limitTable = document.querySelector("#limit"),
@@ -10,6 +10,20 @@ const chargeTable = document.querySelector("#charge"),
   level = document.querySelector("#level"),
   time = document.querySelector("#time"),
   date = document.querySelector("#date");
+
+function set2020() {
+  const LIMIT = [1498300, 1331800, 1276300, 1173200, 1007200, 566600];
+  const CHARGE_TABLE = [
+    [14530, 22310, 29920, 37780, 42930, 47460, 51630, 55390]
+  ];
+}
+
+function set2021() {
+  const LIMIT = [1498300, 1331800, 1276300, 1173200, 1007200, 566600];
+  const CHARGE_TABLE = [
+    [14530, 22310, 29920, 37780, 42930, 47460, 51630, 55390]
+  ];
+}
 
 function calc() { 
   const levelValue = Number(level.value);

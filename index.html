@@ -102,6 +102,15 @@
         본인부담금 계산기
       </h1>
 
+      <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons" id="years">
+        <label class="btn btn-info active">
+          <input type="radio" name="options" checked> 2020
+        </label>
+        <label class="btn btn-info">
+          <input type="radio" name="options"> 2021
+        </label>
+      </div>
+
       <form id="inputForm">
         <div class="form-gorup row mb-3">
           <label for="level" class="col-3 col-form-label text-left"
@@ -254,8 +263,31 @@
             <td>-원</td>
             <td class="font-weight-bolder">-원</td>
           </tr>
+      </table>
+
+      <!-- 재가 table -->
+      <table class="table mt-4">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">방문요양</th>
+            <th scope="col">잔여한도</th>
+          </tr>
+        </thead>
+        <tbody id="visit">
+          <tr>
+            <th scope="row">1</th>
+            <td></td>
+            <td class="font-weight-bolder">-원</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td></td>
+            <td class="font-weight-bolder">-원</td>
+          </tr>
         </tbody>
       </table>
+
     </div>
 
     <!-- footer -->
