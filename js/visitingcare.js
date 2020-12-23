@@ -1,5 +1,5 @@
-const LIMIT = [1498300, 1331800, 1276300, 1173200, 1007200, 566600];
-const CHARGE_TABLE = [
+let LIMIT = [1498300, 1331800, 1276300, 1173200, 1007200, 566600];
+let CHARGE_TABLE = [
   [14530, 22310, 29920, 37780, 42930, 47460, 51630, 55390]
 ];
 const PROPORTION = [0.15, 0.09, 0.06];
@@ -12,15 +12,15 @@ const chargeTable = document.querySelector("#charge"),
   date = document.querySelector("#date");
 
 function set2020() {
-  const LIMIT = [1498300, 1331800, 1276300, 1173200, 1007200, 566600];
-  const CHARGE_TABLE = [
+  LIMIT = [1498300, 1331800, 1276300, 1173200, 1007200, 566600];
+  CHARGE_TABLE = [
     [14530, 22310, 29920, 37780, 42930, 47460, 51630, 55390]
   ];
 }
 
 function set2021() {
-  const LIMIT = [1498300, 1331800, 1276300, 1173200, 1007200, 566600];
-  const CHARGE_TABLE = [
+  LIMIT = [1498300, 1331800, 1276300, 1173200, 1007200, 566600];
+  CHARGE_TABLE = [
     [14530, 22310, 29920, 37780, 42930, 47460, 51630, 55390]
   ];
 }
@@ -66,5 +66,7 @@ function init() {
 }
 
 form.addEventListener("submit", onSubmit);
+document.querySelector("#years > label:nth-child(1)").addEventListener("click", set2020);
+document.querySelector("#years > label:nth-child(2)").addEventListener("click", set2021);
 
 init();
