@@ -118,14 +118,15 @@ function calc() {
     const visitDays90 = Math.floor((LIMIT[levelValue] * limitTimes - (Salary)) / VISIT_CHARGE_TABLE[0][2]);
     visitTable.rows[0].cells[1].innerHTML = `${strs[0]} ${visitDays60}일(${(visitDays60 * VISIT_CHARGE_TABLE[0][1]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원)`;
     visitTable.rows[1].cells[1].innerHTML = `${strs[1]} ${visitDays90}일(${(visitDays90 * VISIT_CHARGE_TABLE[0][2]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원)`;
-    visitTable.rows[0].cells[2].innerHTML = 
+    visitTable.rows[0].cells[2].innerHTML =
         (LIMIT[levelValue] * limitTimes - (Salary) - visitDays60 * VISIT_CHARGE_TABLE[0][1])
             .toString()
             .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
-    visitTable.rows[1].cells[2].innerHTML = 
+    visitTable.rows[1].cells[2].innerHTML =
         (LIMIT[levelValue] * limitTimes - (Salary) - visitDays90 * VISIT_CHARGE_TABLE[0][2])
             .toString()
-            .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";`${strs[1]} ${visitDays90}일(${(visitDays90 * VISIT_CHARGE_TABLE[0][2]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원)`;
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",") + "원";
+    `${strs[1]} ${visitDays90}일(${(visitDays90 * VISIT_CHARGE_TABLE[0][2]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원)`;
 }
 
 function onSubmit(event) {

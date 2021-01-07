@@ -1,37 +1,37 @@
 @import "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500";
 
 body {
-  font-family: "Noto Sans KR", sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
 }
 
 th {
-  padding-left: 5px !important;
-  padding-right: 5px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
 }
 
 td {
-  padding-left: 5px !important;
-  padding-right: 5px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
 }
 
 .container {
-  max-width: 60%;
+    max-width: 60%;
 }
 
 .col-3 {
-  max-width: 100px;
+    max-width: 100px;
 }
 
 @media (max-width: 768px) {
-  .container {
-    max-width: 100%;
-  }
+    .container {
+        max-width: 100%;
+    }
 
-  .table {
-    font-size: 0.8rem;
-  }
+    .table {
+        font-size: 0.8rem;
+    }
 
-  h1 {
-    font-size: 2rem;
-  }
+    h1 {
+        font-size: 2rem;
+    }
 }
