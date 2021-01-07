@@ -1,15 +1,15 @@
-let LIMIT = [1498300, 1331800, 1276300, 1173200, 1007200, 566600];
+let LIMIT = [1520700, 1351700, 1295400, 1189800, 1021300, 573900];
 let CHARGE_TABLE = [
-    [28020, 35030, 46960, 58410, 64350, 69000],
-    [25940, 32430, 43500, 54110, 59610, 63930],
-    [23950, 29940, 40150, 49960, 55070, 59050],
-    [22860, 28570, 38790, 48590, 53680, 57690],
-    [21770, 27210, 37410, 47210, 52320, 56310],
-    [21770, 27210, 37410, 47210, 52320, 56310],
+    [28380, 35480, 47570, 59160, 65180, 69890],
+    [26280, 32850, 44060, 54810, 60380, 64750],
+    [24260, 30330, 40670, 50600, 55780, 59810],
+    [23150, 28940, 39290, 49220, 54370, 58430],
+    [22050, 27560, 37890, 47820, 52990, 57040],
+    [22050, 27560, 37890, 47820, 47820, 47820],
 ];
 const PROPORTION = [0.15, 0.09, 0.06];
 let VISIT_CHARGE_TABLE = [
-    [14530, 22310, 29920, 37780, 42930, 47460, 51630, 55390]
+    [14750, 22640, 30370, 38340, 43570, 48170, 52400, 56320]
 ];
 
 let settings = {
@@ -35,38 +35,6 @@ const table = document.querySelector("#charge"),
     inputMeal = document.querySelector("#inputMeal"),
     inputSnack = document.querySelector("#inputSnack"),
     snackTime = document.querySelector("#snackTime");
-
-function set2020(event) {
-    conYear = "2020";
-    LIMIT = [1498300, 1331800, 1276300, 1173200, 1007200, 566600];
-    CHARGE_TABLE = [
-        [28020, 35030, 46960, 58410, 64350, 69000],
-        [25940, 32430, 43500, 54110, 59610, 63930],
-        [23950, 29940, 40150, 49960, 55070, 59050],
-        [22860, 28570, 38790, 48590, 53680, 57690],
-        [21770, 27210, 37410, 47210, 52320, 56310],
-        [21770, 27210, 37410, 47210, 52320, 56310],
-    ];
-    VISIT_CHARGE_TABLE = [
-        [14530, 22310, 29920, 37780, 42930, 47460, 51630, 55390]
-    ];
-}
-
-function set2021(event) {
-    conYear = "2021";
-    LIMIT = [1520700, 1351700, 1295400, 1189800, 1021300, 573900];
-    CHARGE_TABLE = [
-        [28020, 35480, 47570, 59160, 65180, 69890],
-        [25940, 32850, 44060, 54810, 60380, 64750],
-        [23950, 30330, 40670, 50600, 55780, 59810],
-        [22860, 28940, 39290, 49220, 54370, 58430],
-        [21770, 27560, 37890, 47820, 52990, 57040],
-        [21770, 27560, 37890, 47820, 47820, 47820],
-    ];
-    VISIT_CHARGE_TABLE = [
-        [14750, 22640, 30370, 38340, 43570, 48170, 52400, 56320]
-    ];
-}
 
 function loadSet() {
     const loadedSettings = localStorage.getItem("settings_d");
@@ -128,8 +96,7 @@ function calc() {
 
     // 한도
     let limitTimes = 1;
-    if (timeValue >= 3 && dateValue >= 15 && conYear == "2021") limitTimes = 1.2;
-    if (timeValue >= 3 && dateValue >= 20 && conYear == "2020") limitTimes = 1.5;
+    if (timeValue >= 3 && dateValue >= 15) limitTimes = 1.2;
     let row = limitTable.rows[0];
     row.cells[0].innerHTML = `${levelValue + 1}등급`;
     row.cells[1].innerHTML =
@@ -173,6 +140,4 @@ function init() {
 form.addEventListener("submit", onSubmit);
 setButtom.addEventListener("click", setClick);
 saveButtom.addEventListener("click", set);
-document.querySelector("#years > label:nth-child(1)").addEventListener("click", set2020);
-document.querySelector("#years > label:nth-child(2)").addEventListener("click", set2021);
 init();
