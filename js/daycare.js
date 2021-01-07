@@ -128,7 +128,7 @@ function calc() {
 
     // 한도
     let limitTimes = 1;
-    if (timeValue >= 2 && dateValue >= 20 && conYear == "2021") limitTimes = 1.2;
+    if (timeValue >= 3 && dateValue >= 15 && conYear == "2021") limitTimes = 1.2;
     if (timeValue >= 3 && dateValue >= 20 && conYear == "2020") limitTimes = 1.5;
     let row = limitTable.rows[0];
     row.cells[0].innerHTML = `${levelValue + 1}등급`;

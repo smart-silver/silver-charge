@@ -1,4 +1,4 @@
-const CHARGE_TABLE = [
+let CHARGE_TABLE = [
     70990, 65870, 60740, 60740, 60740, 60740,
 ];
 const PROPORTION = [0.20, 0.12, 0.08];
@@ -17,6 +17,18 @@ const table = document.querySelector("#charge"),
     inputMeal = document.querySelector("#inputMeal"),
     inputSnack = document.querySelector("#inputSnack"),
     snackTime = document.querySelector("#snackTime");
+
+function set2020() {
+    CHARGE_TABLE = [
+        70990, 65870, 60740, 60740, 60740, 60740,
+    ];
+}
+    
+function set2021() {
+    CHARGE_TABLE = [
+        71900, 66710, 61520, 61520, 61520, 61520,
+    ];
+}
 
 function loadSet() {
     const loadedSettings = localStorage.getItem("settings_s");
