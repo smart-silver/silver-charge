@@ -129,8 +129,14 @@ function calc() {
     }
 
     // 한도
-    let limitTimes = 1;
-    if (timeValue >= 3 && dateValue >= 15) limitTimes = 1.2;
+    let limitTimes;
+    if (timeValue >= 3 && dateValue >= 15) {
+        limitTimes = 1.2;
+        document.querySelector("body > div.container > div.alert.alert-info").hidden = false;
+    } else {
+        limitTimes = 1;
+        document.querySelector("body > div.container > div.alert.alert-info").hidden = true;
+    }
     let row = limitTable.rows[0];
     row.cells[0].innerHTML = `${levelValue + 1}등급`;
     row.cells[1].innerHTML =
