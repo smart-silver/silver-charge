@@ -18,7 +18,41 @@ let settings = {
     snack: 2
 }
 
-let conYear = "2020";
+function setPre(event) {
+    conYear = "2021";
+    LIMIT = [1520700, 1351700, 1295400, 1189800, 1021300, 573900];
+    CHARGE_TABLE = [
+        [28380, 35480, 47570, 59160, 65180, 69890],
+        [26280, 32850, 44060, 54810, 60380, 64750],
+        [24260, 30330, 40670, 50600, 55780, 59810],
+        [23150, 28940, 39290, 49220, 54370, 58430],
+        [22050, 27560, 37890, 47820, 52990, 57040],
+        [22050, 27560, 37890, 47820, 47820, 47820],
+    ];
+    VISIT_CHARGE_TABLE = [
+        [14750, 22640, 30370, 38340, 43570, 48170, 52400, 56320]
+    ];
+    document.querySelector("#time > option:nth-child(6)").innerText = "10시간 이상 12시간 미만";
+    document.querySelector("#time > option:nth-child(7)").innerText = "12시간 이상";
+}
+
+function setPost(event) {
+    conYear = "2022";
+    LIMIT = [1672700, 1486800, 1350800, 1244900, 1068500, 597600];
+    CHARGE_TABLE = [
+        [29560, 36950, 49530, 61600, 67870, 72780],
+        [57370, 34210, 45880, 57070, 62870, 67420],
+        [25260, 31580, 42350, 52690, 58080, 62280],
+        [24110, 30140, 40910, 51250, 56620, 60840],
+        [22960, 28700, 39450, 49790, 55180, 59400],
+        [22960, 28700, 39450, 49790, 49790, 49790],
+    ];
+    VISIT_CHARGE_TABLE = [
+        [15430, 22380, 30170, 38390, 44770, 50400, 56170, 61950]
+    ];
+    document.querySelector("#time > option:nth-child(6)").innerText = "10시간 이상 13시간 미만";
+    document.querySelector("#time > option:nth-child(7)").innerText = "13시간 이상";
+}
 
 const table = document.querySelector("#charge"),
     limitTable = document.querySelector("#limit"),
@@ -141,4 +175,6 @@ function init() {
 form.addEventListener("submit", onSubmit);
 setButtom.addEventListener("click", setClick);
 saveButtom.addEventListener("click", set);
+document.querySelector("#years > label:nth-child(1)").addEventListener("click", setPre);
+document.querySelector("#years > label:nth-child(2)").addEventListener("click", setPost);
 init();
