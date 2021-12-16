@@ -31,6 +31,11 @@ td {
         font-size: 0.8rem;
     }
 
+    .ad_pc {
+        /* visibility: hidden; */
+        display: none;
+    }
+
     h1 {
         font-size: 2rem;
     }
