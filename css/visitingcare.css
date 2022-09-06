@@ -31,6 +31,10 @@ td {
         font-size: 0.8rem;
     }
 
+    .ad_pc {
+        display: none;
+    }
+
     h1 {
         font-size: 2rem;
     }
