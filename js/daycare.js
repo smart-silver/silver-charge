@@ -1,7 +1,7 @@
 let LIMIT = [1672700, 1486800, 1350800, 1244900, 1068500, 597600];
 let CHARGE_TABLE = [
     [29560, 36950, 49530, 61600, 67870, 72780],
-    [57370, 34210, 45880, 57070, 62870, 67420],
+    [27360, 34210, 45880, 57070, 62870, 67420],
     [25260, 31580, 42350, 52690, 58080, 62280],
     [24110, 30140, 40910, 51250, 56620, 60840],
     [22960, 28700, 39450, 49790, 55180, 59400],
@@ -16,6 +16,42 @@ let settings = {
     mealCharge: 2500,
     snackCharge: 500,
     snack: 2
+}
+
+function setPre(event) {
+    conYear = "2022";
+    LIMIT = [1672700, 1486800, 1350800, 1244900, 1068500, 597600];
+    CHARGE_TABLE = [
+        [29560, 36950, 49530, 61600, 67870, 72780],
+        [27360, 34210, 45880, 57070, 62870, 67420],
+        [25260, 31580, 42350, 52690, 58080, 62280],
+        [24110, 30140, 40910, 51250, 56620, 60840],
+        [22960, 28700, 39450, 49790, 55180, 59400],
+        [22960, 28700, 39450, 49790, 49790, 49790],
+    ];
+    VISIT_CHARGE_TABLE = [
+        [15430, 22380, 30170, 38390, 44770, 50400, 56170, 61950]
+    ];
+    document.querySelector("#time > option:nth-child(6)").innerText = "10시간 이상 12시간 미만";
+    document.querySelector("#time > option:nth-child(7)").innerText = "12시간 이상";
+}
+
+function setPost(event) {
+    conYear = "2023";
+    LIMIT = [1885000, 1690000, 1417200, 1306200, 1121100, 624600];
+    CHARGE_TABLE = [
+        [30900, 38630, 51780, 64400, 70950, 76080],
+        [28600, 35760, 47960, 59660, 65720, 70480],
+        [26400, 33010, 44270, 55080, 60720, 65110],
+        [25200, 31510, 42770, 53580, 59190, 63600],
+        [24000, 30000, 41240, 52050, 57690, 62100],
+        [24000, 30000, 41240, 52050, 52050, 52050],
+    ];
+    VISIT_CHARGE_TABLE = [
+        [16190, 23480, 31650, 40280, 46970, 52880, 58930, 65000]
+    ];
+    document.querySelector("#time > option:nth-child(6)").innerText = "10시간 이상 13시간 미만";
+    document.querySelector("#time > option:nth-child(7)").innerText = "13시간 이상";
 }
 
 const table = document.querySelector("#charge"),
@@ -145,4 +181,6 @@ function init() {
 form.addEventListener("submit", onSubmit);
 setButtom.addEventListener("click", setClick);
 saveButtom.addEventListener("click", set);
+document.querySelector("#years > label:nth-child(1)").addEventListener("click", setPre);
+document.querySelector("#years > label:nth-child(2)").addEventListener("click", setPost);
 init();
