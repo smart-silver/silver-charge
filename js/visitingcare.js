@@ -68,4 +68,6 @@ function init() {
 }
 
 form.addEventListener("submit", onSubmit);
+document.querySelector("#years > label:nth-child(1)").addEventListener("click", setPre);
+document.querySelector("#years > label:nth-child(2)").addEventListener("click", setPost);
 init();
