@@ -64,6 +64,7 @@ const table = document.querySelector("#charge"),
     lunch = document.querySelector("#lunch"),
     dinner = document.querySelector("#dinner"),
     date = document.querySelector("#date"),
+    familly = document.querySelector("#familly-care"),
     setButtom = document.querySelector("#setButton"),
     saveButtom = document.querySelector("#setSave"),
     inputMeal = document.querySelector("#inputMeal"),
@@ -130,7 +131,7 @@ function calc() {
 
     // 한도
     let limitTimes;
-    if (timeValue >= 3 && dateValue >= 15) {
+    if (timeValue >= 3 && dateValue >= 15 && familly.checked === false) {
         limitTimes = 1.2;
         document.querySelector("body > div.container > div.alert.alert-info").hidden = false;
     } else {
