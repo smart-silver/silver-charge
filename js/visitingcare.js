@@ -1,6 +1,6 @@
-let LIMIT = [1672700, 1486800, 1350800, 1244900, 1068500, 597600];
+let LIMIT = [1885000, 1690000, 1417200, 1306200, 1121100, 624600];
 let CHARGE_TABLE = [
-    [15430, 22380, 30170, 38390, 44770, 50400, 56170, 61950]
+    [16190, 23480, 31650, 40280, 46970, 52880, 58930, 65000]
 ];
 const PROPORTION = [0.15, 0.09, 0.06];
 
@@ -68,6 +68,6 @@ function init() {
 }
 
 form.addEventListener("submit", onSubmit);
-document.querySelector("#years > label:nth-child(1)").addEventListener("click", setPre);
-document.querySelector("#years > label:nth-child(2)").addEventListener("click", setPost);
+// document.querySelector("#years > label:nth-child(1)").addEventListener("click", setPre);
+// document.querySelector("#years > label:nth-child(2)").addEventListener("click", setPost);
 init();
